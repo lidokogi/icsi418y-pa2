@@ -1,16 +1,40 @@
-# React + Vite
+# ICSI 418Y Programming Assignment 3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Full-stack app with React, Express, and MongoDB. Users can sign up, log in, create projects, and manage project members.
 
-Currently, two official plugins are available:
+## Running the app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+You need Node.js and a MongoDB Atlas cluster.
 
-## React Compiler
+**Backend**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+cd server
+npm install
+```
 
-## Expanding the ESLint configuration
+Create a `.env` file in the `server` folder:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+MONGO_URI=your_connection_string_here
+```
+
+Make sure your IP is allowed in Atlas under Network Access, then start the server:
+
+```
+node server.js
+```
+
+It should print "Server running on port 9000" and "Connected to MongoDB".
+
+**Frontend**
+
+In a second terminal:
+
+```
+cd client
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173. Both the backend and frontend need to be running.
