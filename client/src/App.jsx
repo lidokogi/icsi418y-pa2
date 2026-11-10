@@ -4,6 +4,7 @@ import Signup from "./components/Signup";
 import CreateProject from "./components/CreateProject";
 import ProjectList from "./components/ProjectList";
 import ProjectMembers from "./components/ProjectMembers";
+import Backlog from "./components/Backlog";
 
 function App() {
   const [page, setPage] = useState("signup");
@@ -15,12 +16,14 @@ function App() {
       <button onClick={() => setPage("create")}>Create Project</button>
       <button onClick={() => setPage("projects")}>Projects</button>
       <button onClick={() => setPage("members")}>Members</button>
+      <button onClick={() => setPage("backlog")}>Backlog</button>
 
       {page === "signup" && <Signup />}
       {page === "login" && <Login />}
       {page === "create" && <CreateProject />}
       {page === "projects" && <ProjectList />}
       {page === "members" && <ProjectMembers />}
+      {page === "backlog" && <Backlog />}
     </div>
   );
 }
